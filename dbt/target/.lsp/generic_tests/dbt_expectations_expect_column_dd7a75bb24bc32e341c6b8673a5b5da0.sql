@@ -1,0 +1,1 @@
+{{ dbt_expectations.test_expect_column_values_to_match_regex(column_name="geolocation_city", model=get_where_subquery(ref('geolocation')), regex="^[A-Z0-9 -]+$") }}

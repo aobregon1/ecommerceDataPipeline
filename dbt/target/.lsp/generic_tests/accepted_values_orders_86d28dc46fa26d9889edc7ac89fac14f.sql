@@ -1,0 +1,1 @@
+{{ test_accepted_values(column_name="order_status", model=get_where_subquery(ref('orders')), values=["delivered","shipped","canceled","invoiced","processing","approved","unavailable","created","canceled_with_delivery_anomaly"]) }}

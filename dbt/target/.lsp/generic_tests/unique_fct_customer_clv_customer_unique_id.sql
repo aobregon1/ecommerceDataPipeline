@@ -1,0 +1,1 @@
+{{ test_unique(column_name="customer_unique_id", model=get_where_subquery(ref('fct_customer_clv'))) }}

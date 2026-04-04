@@ -1,0 +1,62 @@
+version: 2
+
+models:
+  - name: fct_customer_clv
+    description: "Centric view of customer value, frequency, and recency of purchase."
+    columns:
+      - name: customer_unique_id
+        description: "The unique identifier for a natural person."
+        tests:
+          - unique
+          - not_null
+      - name: total_lifetime_value
+        description: "Total spend across all orders and installments."
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              arguments:
+                min_value: 0
+      - name: recency_days
+        description: "Days since last purchase relative to the latest data point."
+
+  - name: fct_seller_performance
+    description: "Monthly aggregation of seller efficiency and logistics accuracy."
+    columns:
+      - name: seller_id
+        tests:
+          - not_null
+      - name: avg_lead_time
+        description: "Average days from purchase to delivery."
+      - name: freight_ratio
+        description: "Ratio of shipping cost to product price. High values suggest bulky items."
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              config:
+                severity: warn
+              arguments:
+                min_value: 0
+                max_value: 5 # Alert if shipping is 5x the price
+
+  - name: fct_category_profitability
+    description: "Profitability and customer satisfaction metrics by product category."
+    columns:
+      - name: product_category_name
+        tests:
+          - unique
+      - name: avg_category_review_score
+        description: "Average review score inherited from order-level feedback."
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              arguments:
+                min_value: 1
+                max_value: 5
+
+  - name: fct_geospatial_performance
+    description: "Geographic distribution of sales and customer density by zip code."
+    columns:
+      - name: geolocation_zip_code_prefix
+        tests:
+          - not_null
+      - name: customer_density
+        description: "Count of unique customers in this prefix."
+      - name: revenue_concentration
+        description: "Total revenue generated from this specific location."

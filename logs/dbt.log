@@ -1,0 +1,254 @@
+[0m18:11:05.713968 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 18:11:05.725077 | ec858c92-5bf5-419d-89f5-c0c3c526b53f ==============================
+[0m18:11:05.725077 [info ] [MainThread]: Running with dbt=1.11.0-b3
+[0m18:11:05.725541 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'version_check': 'True', 'introspect': 'True', 'use_experimental_parser': 'False', 'cache_selected_only': 'False', 'partial_parse': 'True', 'quiet': 'False', 'indirect_selection': 'eager', 'warn_error': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True', 'empty': 'None', 'log_cache_events': 'False', 'fail_fast': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_format': 'default', 'target_path': 'None', 'log_path': 'logs', 'debug': 'False', 'printer_width': '80', 'write_json': 'True', 'use_colors': 'True', 'profiles_dir': '/Users/anthonyola/.dbt'}
+[0m18:11:05.732056 [info ] [MainThread]: dbt version: 1.11.0-b3
+[0m18:11:05.732297 [info ] [MainThread]: python version: 3.9.6
+[0m18:11:05.732439 [info ] [MainThread]: python path: /Library/Developer/CommandLineTools/usr/bin/python3
+[0m18:11:05.732568 [info ] [MainThread]: os info: macOS-15.7.2-arm64-arm-64bit
+[0m18:11:06.091044 [info ] [MainThread]: Using profiles dir at /Users/anthonyola/.dbt
+[0m18:11:06.091316 [info ] [MainThread]: Using profiles.yml file at /Users/anthonyola/.dbt/profiles.yml
+[0m18:11:06.091472 [info ] [MainThread]: Using dbt_project.yml file at /Users/anthonyola/Documents/ecommerceDataPipeline/dbt_project.yml
+[0m18:11:06.091726 [info ] [MainThread]: adapter type: snowflake
+[0m18:11:06.091865 [info ] [MainThread]: adapter version: 1.10.2
+[0m18:11:06.092017 [info ] [MainThread]: Configuration:
+[0m18:11:06.092152 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m18:11:06.092278 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m18:11:06.092404 [info ] [MainThread]: Required dependencies:
+[0m18:11:06.092559 [debug] [MainThread]: Executing "git --help"
+[0m18:11:06.107804 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m18:11:06.108408 [debug] [MainThread]: STDERR: "b''"
+[0m18:11:06.108565 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m18:11:06.108721 [info ] [MainThread]: Connection:
+[0m18:11:06.108879 [info ] [MainThread]:   account: lhc41873.us-east-1
+[0m18:11:06.109006 [info ] [MainThread]:   user: aobreg01
+[0m18:11:06.109130 [info ] [MainThread]:   database: ECOMMERCE_DATA_PIPELINE
+[0m18:11:06.109255 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m18:11:06.109380 [info ] [MainThread]:   role: None
+[0m18:11:06.109504 [info ] [MainThread]:   schema: RAW
+[0m18:11:06.109626 [info ] [MainThread]:   authenticator: None
+[0m18:11:06.109763 [info ] [MainThread]:   oauth_client_id: None
+[0m18:11:06.109885 [info ] [MainThread]:   query_tag: None
+[0m18:11:06.110007 [info ] [MainThread]:   client_session_keep_alive: False
+[0m18:11:06.110129 [info ] [MainThread]:   host: None
+[0m18:11:06.110248 [info ] [MainThread]:   port: None
+[0m18:11:06.110376 [info ] [MainThread]:   proxy_host: None
+[0m18:11:06.110496 [info ] [MainThread]:   proxy_port: None
+[0m18:11:06.110617 [info ] [MainThread]:   protocol: None
+[0m18:11:06.110738 [info ] [MainThread]:   connect_retries: 1
+[0m18:11:06.110858 [info ] [MainThread]:   connect_timeout: None
+[0m18:11:06.110978 [info ] [MainThread]:   retry_on_database_errors: False
+[0m18:11:06.111098 [info ] [MainThread]:   retry_all: False
+[0m18:11:06.111218 [info ] [MainThread]:   insecure_mode: False
+[0m18:11:06.111337 [info ] [MainThread]:   reuse_connections: True
+[0m18:11:06.111457 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m18:11:06.111777 [info ] [MainThread]: Registered adapter: snowflake=1.10.2
+[0m18:11:06.182794 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m18:11:06.203142 [debug] [MainThread]: Using snowflake connection "debug"
+[0m18:11:06.203323 [debug] [MainThread]: On debug: select 1 as id
+[0m18:11:06.203445 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:11:09.059660 [debug] [MainThread]: SQL status: SUCCESS 1 in 2.856 seconds
+[0m18:11:09.060912 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m18:11:09.061351 [info ] [MainThread]: [31m1 check failed:[0m
+[0m18:11:09.061783 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </Users/anthonyola/Documents/ecommerceDataPipeline/dbt_project.yml> not found
+
+[0m18:11:09.066693 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 3.3775055, "process_in_blocks": "0", "process_kernel_time": 0.219666, "process_mem_max_rss": "196313088", "process_out_blocks": "0", "process_user_time": 1.176948}
+[0m18:11:09.067152 [debug] [MainThread]: Command `dbt debug` failed at 18:11:09.067059 after 3.38 seconds
+[0m18:11:09.067488 [debug] [MainThread]: Connection 'debug' was left open.
+[0m18:11:09.067741 [debug] [MainThread]: On debug: Close
+[0m18:11:09.177912 [debug] [MainThread]: Flushing usage events
+[0m18:13:45.598627 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 18:13:45.608683 | dba4cfa8-96be-48fc-b9aa-6106584a80f5 ==============================
+[0m18:13:45.608683 [info ] [MainThread]: Running with dbt=1.11.0-b3
+[0m18:13:45.609233 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'invocation_command': 'dbt ', 'log_format': 'default', 'cache_selected_only': 'False', 'introspect': 'True', 'no_print': 'None', 'version_check': 'True', 'profiles_dir': '/Users/anthonyola/.dbt', 'quiet': 'False', 'use_colors': 'True', 'empty': 'None', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'target_path': 'None', 'debug': 'False', 'printer_width': '80', 'static_parser': 'True', 'log_path': '/Users/anthonyola/Documents/ecommerceDataPipeline/logs', 'write_json': 'True', 'fail_fast': 'False', 'warn_error': 'None'}
+[0m18:13:45.670831 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m18:13:45.671395 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m18:13:45.672887 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.10045029, "process_in_blocks": "0", "process_kernel_time": 0.066348, "process_mem_max_rss": "103284736", "process_out_blocks": "0", "process_user_time": 0.634224}
+[0m18:13:45.673112 [debug] [MainThread]: Command `cli deps` succeeded at 18:13:45.673064 after 0.10 seconds
+[0m18:13:45.673269 [debug] [MainThread]: Flushing usage events
+[0m18:13:52.997611 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 18:13:53.006134 | a6fe16c4-72b1-425c-b0ef-1b35aceecb60 ==============================
+[0m18:13:53.006134 [info ] [MainThread]: Running with dbt=1.11.0-b3
+[0m18:13:53.006615 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'debug': 'False', 'partial_parse': 'True', 'target_path': 'None', 'log_cache_events': 'False', 'printer_width': '80', 'log_format': 'default', 'static_parser': 'True', 'profiles_dir': '/Users/anthonyola/.dbt', 'empty': 'None', 'write_json': 'True', 'warn_error': 'None', 'no_print': 'None', 'log_path': '/Users/anthonyola/Documents/ecommerceDataPipeline/logs', 'invocation_command': 'dbt debug', 'use_colors': 'True'}
+[0m18:13:53.011525 [info ] [MainThread]: dbt version: 1.11.0-b3
+[0m18:13:53.011708 [info ] [MainThread]: python version: 3.9.6
+[0m18:13:53.011851 [info ] [MainThread]: python path: /Library/Developer/CommandLineTools/usr/bin/python3
+[0m18:13:53.011979 [info ] [MainThread]: os info: macOS-15.7.2-arm64-arm-64bit
+[0m18:13:53.283117 [info ] [MainThread]: Using profiles dir at /Users/anthonyola/.dbt
+[0m18:13:53.283372 [info ] [MainThread]: Using profiles.yml file at /Users/anthonyola/.dbt/profiles.yml
+[0m18:13:53.283552 [info ] [MainThread]: Using dbt_project.yml file at /Users/anthonyola/Documents/ecommerceDataPipeline/dbt_project.yml
+[0m18:13:53.283778 [info ] [MainThread]: adapter type: snowflake
+[0m18:13:53.283931 [info ] [MainThread]: adapter version: 1.10.2
+[0m18:13:53.330675 [info ] [MainThread]: Configuration:
+[0m18:13:53.330948 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m18:13:53.331102 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m18:13:53.331238 [info ] [MainThread]: Required dependencies:
+[0m18:13:53.331408 [debug] [MainThread]: Executing "git --help"
+[0m18:13:53.345164 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m18:13:53.345616 [debug] [MainThread]: STDERR: "b''"
+[0m18:13:53.345798 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m18:13:53.345962 [info ] [MainThread]: Connection:
+[0m18:13:53.346128 [info ] [MainThread]:   account: lhc41873.us-east-1
+[0m18:13:53.346251 [info ] [MainThread]:   user: aobreg01
+[0m18:13:53.346371 [info ] [MainThread]:   database: ECOMMERCE_DATA_PIPELINE
+[0m18:13:53.346493 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m18:13:53.346609 [info ] [MainThread]:   role: None
+[0m18:13:53.346726 [info ] [MainThread]:   schema: RAW
+[0m18:13:53.346842 [info ] [MainThread]:   authenticator: None
+[0m18:13:53.346963 [info ] [MainThread]:   oauth_client_id: None
+[0m18:13:53.347076 [info ] [MainThread]:   query_tag: None
+[0m18:13:53.347194 [info ] [MainThread]:   client_session_keep_alive: False
+[0m18:13:53.347315 [info ] [MainThread]:   host: None
+[0m18:13:53.347437 [info ] [MainThread]:   port: None
+[0m18:13:53.347551 [info ] [MainThread]:   proxy_host: None
+[0m18:13:53.347670 [info ] [MainThread]:   proxy_port: None
+[0m18:13:53.347790 [info ] [MainThread]:   protocol: None
+[0m18:13:53.347909 [info ] [MainThread]:   connect_retries: 1
+[0m18:13:53.348028 [info ] [MainThread]:   connect_timeout: None
+[0m18:13:53.348147 [info ] [MainThread]:   retry_on_database_errors: False
+[0m18:13:53.348266 [info ] [MainThread]:   retry_all: False
+[0m18:13:53.348380 [info ] [MainThread]:   insecure_mode: False
+[0m18:13:53.348495 [info ] [MainThread]:   reuse_connections: True
+[0m18:13:53.348615 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m18:13:53.348943 [info ] [MainThread]: Registered adapter: snowflake=1.10.2
+[0m18:13:53.419669 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m18:13:53.439438 [debug] [MainThread]: Using snowflake connection "debug"
+[0m18:13:53.439613 [debug] [MainThread]: On debug: select 1 as id
+[0m18:13:53.439731 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:13:56.745114 [debug] [MainThread]: SQL status: SUCCESS 1 in 3.305 seconds
+[0m18:13:56.748118 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m18:13:56.749094 [info ] [MainThread]: [32mAll checks passed![0m
+[0m18:13:56.753468 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 3.7809882, "process_in_blocks": "0", "process_kernel_time": 0.16527, "process_mem_max_rss": "194019328", "process_out_blocks": "0", "process_user_time": 1.058051}
+[0m18:13:56.754036 [debug] [MainThread]: Command `dbt debug` succeeded at 18:13:56.753926 after 3.78 seconds
+[0m18:13:56.754401 [debug] [MainThread]: Connection 'debug' was left open.
+[0m18:13:56.754690 [debug] [MainThread]: On debug: Close
+[0m18:13:56.844925 [debug] [MainThread]: Flushing usage events
+[0m18:20:31.659812 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 18:20:31.672146 | bacf5dda-7063-4165-8313-fd7ea2c15589 ==============================
+[0m18:20:31.672146 [info ] [MainThread]: Running with dbt=1.11.0-b3
+[0m18:20:31.672608 [debug] [MainThread]: running dbt with arguments {'quiet': 'False', 'fail_fast': 'False', 'log_path': '/Users/anthonyola/Documents/ecommerceDataPipeline/logs', 'log_cache_events': 'False', 'profiles_dir': '/Users/anthonyola/.dbt', 'target_path': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'no_print': 'None', 'introspect': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'write_json': 'True', 'indirect_selection': 'eager', 'warn_error': 'None', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'cache_selected_only': 'False', 'debug': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt run', 'printer_width': '80', 'version_check': 'True', 'log_format': 'default'}
+[0m18:20:32.108310 [info ] [MainThread]: Registered adapter: snowflake=1.10.2
+[0m18:20:32.183162 [debug] [MainThread]: checksum: e63134dccc1251cfb572caf0e4aa952f030c125ee3634f3bf2c0a2e1bb6ae349, vars: {}, profile: , target: , version: 1.11.0b3
+[0m18:20:32.222073 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:20:32.222260 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:20:32.222544 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 3 unused configuration paths:
+- models.ecom_project
+- models.ecom_project.staging
+- models.ecom_project.marts
+[0m18:20:32.247696 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/anthonyola/Documents/ecommerceDataPipeline/target/manifest.json
+[0m18:20:32.248948 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/anthonyola/Documents/ecommerceDataPipeline/target/semantic_manifest.json
+[0m18:20:32.256444 [info ] [MainThread]: Found 492 macros
+[0m18:20:32.256910 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m18:20:32.257758 [debug] [MainThread]: Command end result
+[0m18:20:32.268149 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/anthonyola/Documents/ecommerceDataPipeline/target/manifest.json
+[0m18:20:32.268972 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/anthonyola/Documents/ecommerceDataPipeline/target/semantic_manifest.json
+[0m18:20:32.270581 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/anthonyola/Documents/ecommerceDataPipeline/target/run_results.json
+[0m18:20:32.272427 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 0.6380669, "process_in_blocks": "0", "process_kernel_time": 0.163653, "process_mem_max_rss": "171261952", "process_out_blocks": "0", "process_user_time": 1.011517}
+[0m18:20:32.272607 [debug] [MainThread]: Command `dbt run` succeeded at 18:20:32.272571 after 0.64 seconds
+[0m18:20:32.272761 [debug] [MainThread]: Flushing usage events
+[0m18:23:42.527304 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 18:23:42.545295 | ba547e3d-280c-44ec-a5e9-f176a92c7fce ==============================
+[0m18:23:42.545295 [info ] [MainThread]: Running with dbt=1.11.0-b3
+[0m18:23:42.545735 [debug] [MainThread]: running dbt with arguments {'quiet': 'False', 'cache_selected_only': 'False', 'no_print': 'None', 'write_json': 'True', 'warn_error': 'None', 'indirect_selection': 'eager', 'log_format': 'default', 'static_parser': 'True', 'fail_fast': 'False', 'log_cache_events': 'False', 'use_colors': 'True', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'log_path': '/Users/anthonyola/Documents/ecommerceDataPipeline/logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True', 'printer_width': '80', 'version_check': 'True', 'target_path': 'None', 'debug': 'False', 'profiles_dir': '/Users/anthonyola/.dbt', 'introspect': 'True', 'empty': 'False'}
+[0m18:23:43.000625 [info ] [MainThread]: Registered adapter: snowflake=1.10.2
+[0m18:23:43.076631 [debug] [MainThread]: checksum: e63134dccc1251cfb572caf0e4aa952f030c125ee3634f3bf2c0a2e1bb6ae349, vars: {}, profile: , target: , version: 1.11.0b3
+[0m18:23:43.115645 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:23:43.115841 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:23:43.116134 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 3 unused configuration paths:
+- models
+- models.staging
+- models.marts
+[0m18:23:43.141848 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/anthonyola/Documents/ecommerceDataPipeline/target/manifest.json
+[0m18:23:43.143564 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/anthonyola/Documents/ecommerceDataPipeline/target/semantic_manifest.json
+[0m18:23:43.153787 [info ] [MainThread]: Found 492 macros
+[0m18:23:43.154293 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m18:23:43.155194 [debug] [MainThread]: Command end result
+[0m18:23:43.164810 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/anthonyola/Documents/ecommerceDataPipeline/target/manifest.json
+[0m18:23:43.165588 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/anthonyola/Documents/ecommerceDataPipeline/target/semantic_manifest.json
+[0m18:23:43.167458 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/anthonyola/Documents/ecommerceDataPipeline/target/run_results.json
+[0m18:23:43.169731 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 0.66738564, "process_in_blocks": "0", "process_kernel_time": 0.166512, "process_mem_max_rss": "172523520", "process_out_blocks": "0", "process_user_time": 1.022603}
+[0m18:23:43.169930 [debug] [MainThread]: Command `dbt run` succeeded at 18:23:43.169891 after 0.67 seconds
+[0m18:23:43.170092 [debug] [MainThread]: Flushing usage events
+[0m18:29:26.452184 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 18:29:26.463734 | 4731933a-c457-4b80-8bdb-fb397aa738c9 ==============================
+[0m18:29:26.463734 [info ] [MainThread]: Running with dbt=1.11.0-b3
+[0m18:29:26.464175 [debug] [MainThread]: running dbt with arguments {'introspect': 'True', 'target_path': 'None', 'version_check': 'True', 'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'profiles_dir': '/Users/anthonyola/.dbt', 'write_json': 'True', 'debug': 'False', 'empty': 'False', 'invocation_command': 'dbt run', 'use_colors': 'True', 'static_parser': 'True', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'warn_error': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'quiet': 'False', 'fail_fast': 'False', 'no_print': 'None', 'log_path': '/Users/anthonyola/Documents/ecommerceDataPipeline/logs'}
+[0m18:29:26.902143 [info ] [MainThread]: Registered adapter: snowflake=1.10.2
+[0m18:29:26.994935 [debug] [MainThread]: checksum: e63134dccc1251cfb572caf0e4aa952f030c125ee3634f3bf2c0a2e1bb6ae349, vars: {}, profile: , target: , version: 1.11.0b3
+[0m18:29:27.034419 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:29:27.034591 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:29:27.034895 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 3 unused configuration paths:
+- models.staging
+- models.marts
+- models
+[0m18:29:27.059796 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/anthonyola/Documents/ecommerceDataPipeline/target/manifest.json
+[0m18:29:27.061081 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/anthonyola/Documents/ecommerceDataPipeline/target/semantic_manifest.json
+[0m18:29:27.068778 [info ] [MainThread]: Found 492 macros
+[0m18:29:27.069234 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m18:29:27.070073 [debug] [MainThread]: Command end result
+[0m18:29:27.079856 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/anthonyola/Documents/ecommerceDataPipeline/target/manifest.json
+[0m18:29:27.080571 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/anthonyola/Documents/ecommerceDataPipeline/target/semantic_manifest.json
+[0m18:29:27.082597 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/anthonyola/Documents/ecommerceDataPipeline/target/run_results.json
+[0m18:29:27.084525 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 0.6570517, "process_in_blocks": "0", "process_kernel_time": 0.166098, "process_mem_max_rss": "171950080", "process_out_blocks": "0", "process_user_time": 1.002796}
+[0m18:29:27.084709 [debug] [MainThread]: Command `dbt run` succeeded at 18:29:27.084671 after 0.66 seconds
+[0m18:29:27.084863 [debug] [MainThread]: Flushing usage events
+[0m18:34:55.075069 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 18:34:55.087012 | 9d4bd774-acfc-4155-8324-d1356bcfb490 ==============================
+[0m18:34:55.087012 [info ] [MainThread]: Running with dbt=1.11.0-b3
+[0m18:34:55.087507 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'quiet': 'False', 'indirect_selection': 'eager', 'target_path': 'None', 'cache_selected_only': 'False', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'write_json': 'True', 'version_check': 'True', 'fail_fast': 'False', 'empty': 'False', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'profiles_dir': '/Users/anthonyola/.dbt', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'log_path': '/Users/anthonyola/Documents/ecommerceDataPipeline/logs', 'no_print': 'None', 'partial_parse': 'True', 'debug': 'False', 'invocation_command': 'dbt run', 'use_colors': 'True', 'static_parser': 'True'}
+[0m18:34:55.531648 [info ] [MainThread]: Registered adapter: snowflake=1.10.2
+[0m18:34:55.608822 [debug] [MainThread]: checksum: e63134dccc1251cfb572caf0e4aa952f030c125ee3634f3bf2c0a2e1bb6ae349, vars: {}, profile: , target: , version: 1.11.0b3
+[0m18:34:55.640910 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:34:55.641088 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:34:55.641368 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 3 unused configuration paths:
+- models.ecom_project
+- models.ecom_project.stage
+- models.ecom_project.mart
+[0m18:34:55.666693 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/anthonyola/Documents/ecommerceDataPipeline/target/manifest.json
+[0m18:34:55.668044 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/anthonyola/Documents/ecommerceDataPipeline/target/semantic_manifest.json
+[0m18:34:55.675765 [info ] [MainThread]: Found 492 macros
+[0m18:34:55.676255 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m18:34:55.677166 [debug] [MainThread]: Command end result
+[0m18:34:55.686964 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/anthonyola/Documents/ecommerceDataPipeline/target/manifest.json
+[0m18:34:55.687683 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/anthonyola/Documents/ecommerceDataPipeline/target/semantic_manifest.json
+[0m18:34:55.689430 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/anthonyola/Documents/ecommerceDataPipeline/target/run_results.json
+[0m18:34:55.691310 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 0.6413308, "process_in_blocks": "0", "process_kernel_time": 0.163215, "process_mem_max_rss": "171737088", "process_out_blocks": "0", "process_user_time": 1.016}
+[0m18:34:55.691489 [debug] [MainThread]: Command `dbt run` succeeded at 18:34:55.691453 after 0.64 seconds
+[0m18:34:55.691639 [debug] [MainThread]: Flushing usage events
+[0m18:39:20.696180 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 18:39:20.706245 | 719d9dc1-5a32-45d2-835e-c3ea37f7427f ==============================
+[0m18:39:20.706245 [info ] [MainThread]: Running with dbt=1.11.0-b3
+[0m18:39:20.706734 [debug] [MainThread]: running dbt with arguments {'fail_fast': 'False', 'log_format': 'default', 'log_path': 'logs', 'target_path': 'None', 'profiles_dir': '/Users/anthonyola/.dbt', 'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'warn_error': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'partial_parse': 'True', 'debug': 'False', 'empty': 'False', 'static_parser': 'True', 'cache_selected_only': 'False', 'introspect': 'True', 'no_print': 'None', 'version_check': 'True', 'quiet': 'False', 'invocation_command': 'dbt run', 'printer_width': '80', 'log_cache_events': 'False'}
+[0m18:39:20.707015 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/anthonyola/Documents/ecommerceDataPipeline/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m18:39:20.708153 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.036470585, "process_in_blocks": "0", "process_kernel_time": 0.071316, "process_mem_max_rss": "100466688", "process_out_blocks": "0", "process_user_time": 0.594711}
+[0m18:39:20.708360 [debug] [MainThread]: Command `dbt run` failed at 18:39:20.708310 after 0.04 seconds
+[0m18:39:20.708515 [debug] [MainThread]: Flushing usage events

@@ -1,0 +1,1 @@
+{{ dbt_expectations.test_expect_column_values_to_be_between(column_name="avg_category_review_score", max_value=5, min_value=1, model=get_where_subquery(ref('fct_category_profitability'))) }}

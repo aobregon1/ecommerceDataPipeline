@@ -1,0 +1,9 @@
+SELECT
+    CAST(geolocation_zip_code_prefix AS INTEGER) AS geolocation_zip_code_prefix,
+    AVG(CAST(geolocation_lat AS NUMBER(38,15))) AS geolocation_lat,
+    AVG(CAST(geolocation_lng AS NUMBER(38,15))) AS geolocation_lng,
+    -- clean_accents is a custom SQL function to replace Portuguese accents with their unaccented counterparts for better matching
+    MAX(CLEAN_ACCENTS(UPPER(TRIM(CAST(geolocation_city AS STRING))))) AS geolocation_city,
+    MAX(UPPER(TRIM(CAST(geolocation_state AS STRING)))) AS geolocation_state
+FROM {{ source('raw', 'geolocation') }}
+GROUP BY geolocation_zip_code_prefix

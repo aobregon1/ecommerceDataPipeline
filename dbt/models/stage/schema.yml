@@ -1,0 +1,120 @@
+version: 2
+
+models:
+  # 1. Orders - Fixed Status & Ghost Deliveries
+  - name: orders
+    tests:
+      - dbt_utils.expression_is_true:
+          arguments:
+            expression:  "order_status != 'delivered' or order_delivered_customer_date is not null"
+
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: order_status
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['delivered', 'shipped', 'canceled', 'invoiced', 'processing', 'approved', 'unavailable', 'created', 'canceled_with_delivery_anomaly']
+
+  # 2. Order Reviews - Deduplicated Logic
+  - name: order_reviews
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: review_id
+        tests:
+          - not_null
+
+  # 3. Geolocation - Aggregated Centroids
+  - name: geolocation
+    columns:
+      - name: geolocation_zip_code_prefix
+        tests:
+          - unique
+          - not_null
+      - name: geolocation_city
+        description: "Normalized city names (Upper case, Trimmed, No Accents)"
+        tests:
+          - not_null
+          # This Regex ensures the string only contains A-Z, 0-9, spaces, and hyphens.
+          # If an 'Ã' or 'Ç' survives the TRANSLATE function, this test will FAIL.
+          - dbt_expectations.expect_column_values_to_match_regex:
+              arguments:
+                regex: '^[A-Z0-9 -]+$'
+
+
+  # 4. Order Items - Relationship Integrity
+  - name: order_items
+    columns:
+      - name: order_item_id
+        tests:
+          - not_null
+      - name: order_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('orders')
+                field: order_id
+      - name: product_id
+        tests:
+          - relationships:
+              arguments:
+                to: ref('products')
+                field: product_id
+
+  # 5. Customers - Identity
+  - name: customers
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+
+  # 6. Sellers - Identity
+  - name: sellers
+    columns:
+      - name: seller_id
+        tests:
+          - unique
+          - not_null
+
+  # 7. Products - Identity & Categorization
+  - name: products
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
+
+  # 8. Order Payments - Value Check
+  - name: order_payments
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('orders')
+                field: order_id
+      - name: payment_value
+        tests:
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: ">= 0"
+
+  # 9. Product Category Name Translation
+  - name: product_category_name_translation
+    columns:
+      - name: product_category_name
+        tests:
+          - unique
+          - not_null
+      - name: product_category_name_english
+        tests:
+          - not_null

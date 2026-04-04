@@ -1,0 +1,1 @@
+{{ test_unique(column_name="geolocation_zip_code_prefix", model=get_where_subquery(ref('geolocation'))) }}

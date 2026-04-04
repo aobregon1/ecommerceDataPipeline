@@ -1,0 +1,22 @@
+
+    
+    
+
+with all_values as (
+
+    select
+        order_status as value_field,
+        count(*) as n_records
+
+    from ECOMMERCE_DATA_PIPELINE.stage.orders
+    group by order_status
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'delivered','shipped','canceled','invoiced','processing','approved','unavailable','created','canceled_with_delivery_anomaly'
+)
+
+

@@ -1,0 +1,1 @@
+{{ dbt_utils.test_expression_is_true(expression="order_status != 'delivered' or order_delivered_customer_date is not null", model=get_where_subquery(ref('orders'))) }}

@@ -1,0 +1,1 @@
+{{ dbt_utils.test_expression_is_true(column_name="geolocation_city", expression="NOT (REGEXP_LIKE(geolocation_city, '[ÁÀÂÃÉÈÊÍÌÎÓÒÔÕÚÙÛÇ]'))", model=get_where_subquery(ref('geolocation'))) }}
