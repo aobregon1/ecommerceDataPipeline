@@ -61,6 +61,7 @@ Prerequisites
     Git: To clone the repository and manage version control.
 
 Clone the Repository:
+
     Bash
     git clone https://github.com/aobregon1/ecommerce_data_pipeline.git
 
