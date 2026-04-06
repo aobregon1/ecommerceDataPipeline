@@ -69,26 +69,20 @@ Configure Environment Variables:
     Initialize the .env file in the project root folder with Snowflake credentials
 
     SNOWFLAKE_USER=""
-
     SNOWFLAKE_PASSWORD=""
-    
     SNOWFLAKE_ACCOUNT=""
-    
     SNOWFLAKE_WAREHOUSE="COMPUTE_WH"
-    
     SNOWFLAKE_DATABASE="ECOMMERCE_DATA_PIPELINE"
-    
     SNOWFLAKE_SCHEMA="RAW"
-    
     DATA_DIR="/usr/local/airflow/data/"
 
 Initialize Snowflake
 
-    Execute the /include/ingestion/createRawTables.sql script in Snowflake to initialize the database, schemas, and bronze-level raw tables.
+Execute the /include/ingestion/createRawTables.sql script in Snowflake to initialize the database, schemas, and bronze-level raw tables.
 
 Initialize Accent Function
 
-    Execute the /snowflake_functions/clean_accents.sql script to initialize the clean accents function
+Execute the /snowflake_functions/clean_accents.sql script to initialize the clean accents function
 
 Launch with Astro CLI:
 
