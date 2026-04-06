@@ -66,7 +66,7 @@ Clone the Repository:
 
 Configure Environment Variables:
 
-    Initialize the .env file in the project root folder with Snowflake credentials
+Initialize the .env file in the project root folder with Snowflake credentials
 
     SNOWFLAKE_USER=""
     SNOWFLAKE_PASSWORD=""
