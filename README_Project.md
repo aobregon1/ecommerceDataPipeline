@@ -48,12 +48,32 @@ CLV (Customer Lifetime Value): Predictive modeling for long-term revenue impact.
 
 Setup & Installation
 =====================
-Clone the Repository:
+Prerequisites
+    Python 3.9+: Required for local dbt development and script execution.
+    Docker Desktop: Required to host the Airflow/Astronomer containerized environment.
+    Astro CLI: The interface used to initialize, build, and run the local Airflow stack.
+    Snowflake Account: A live instance with ACCOUNTADMIN (or equivalent) privileges to create the initial database and schemas.
+    Git: To clone the repository and manage version control.
 
-Bash
-git clone https://github.com/aobregon1/ecommerce_data_pipeline.git
+Clone the Repository:
+    Bash
+    git clone https://github.com/aobregon1/ecommerce_data_pipeline.git
+
 Configure Environment Variables:
-Update your .env file with Snowflake credentials (SNOWFLAKE_ACCOUNT, SNOWFLAKE_USER, etc.).
+    Initialize the .env file in the project root folder with Snowflake credentials
+    SNOWFLAKE_USER=""
+    SNOWFLAKE_PASSWORD=""
+    SNOWFLAKE_ACCOUNT=""
+    SNOWFLAKE_WAREHOUSE="COMPUTE_WH"
+    SNOWFLAKE_DATABASE="ECOMMERCE_DATA_PIPELINE"
+    SNOWFLAKE_SCHEMA="RAW"
+    DATA_DIR="/usr/local/airflow/data/"
+
+Initialize Snowflake
+    Execute the /include/ingestion/createRawTables.sql script in Snowflake to initialize the database, schemas, and bronze-level raw tables.
+
+Initialize Accent Function
+    Execute the /snowflake_functions/clean_accents.sql script to initialize the clean accents function
 
 Launch with Astro CLI:
 astro dev start
