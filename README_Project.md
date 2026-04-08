@@ -4,7 +4,7 @@ This project simulates a production-grade data platform processing 1.4M+ e-comme
 
 Architecture Overview
 ======================
-![Architectural Diagram](README_ArchitecturalDiagram.svg)
+![Architectural Diagram](README_ArchitecturalDiagram.png)
 
 The pipeline follows a modern ELT (Extract, Load, Transform) pattern:
 
