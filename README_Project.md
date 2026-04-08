@@ -1,9 +1,11 @@
 Cloud-Native Medallion Architecture & E-Commerce ELT Pipeline
 =============================================================
-An end-to-end data engineering framework designed to ingest, transform, and model high-volume e-commerce data. This project demonstrates a modern enterprise stack utilizing Snowflake, dbt, Apache Airflow, and Docker to implement a robust Medallion Architecture (Bronze/Silver/Gold layers).
+This project simulates a production-grade data platform processing 1.4M+ e-commerce records, enabling customer segmentation, revenue analytics, and geospatial insights through a fully orchestrated ELT pipeline.
 
 Architecture Overview
 ======================
+![Architectural Diagram](README_ArchitecturalDiagram.svg)
+
 The pipeline follows a modern ELT (Extract, Load, Transform) pattern:
 
 Extraction: Python-based ingestion scripts extract raw e-commerce data.
@@ -32,11 +34,11 @@ Environment: Docker / Astro CLI
 
 Key Features
 ============
-Medallion Architecture: Logical separation of concerns across Raw (Bronze), Cleansed (Silver), and Curated (Gold) data layers.
+Medallion Architecture: Logical separation of concerns across Raw (Bronze), Cleansed (Silver), and Mart (Gold) data layers.
 
 Dynamic Orchestration: Utilizes Astronomer Cosmos to automatically map dbt models into Airflow Task Groups, providing granular observability.
 
-Data Quality Assurance: Implemented custom dbt schema tests and casting logic to ensure 100% data type consistency and integrity.
+Data Quality Assurance: Implemented custom dbt schema tests and casting logic to ensure data type consistency and integrity.
 
 Advanced Analytics: Built specialized models including:
 
@@ -45,6 +47,26 @@ RFM Analysis: Recency, Frequency, and Monetary metrics for customer segmentation
 Geospatial Density: Regional revenue concentration and logistics performance.
 
 CLV (Customer Lifetime Value): Predictive modeling for long-term revenue impact.
+
+Challenges & Technical Solutions
+===================================
+1. Environmental Resource Constraints (Docker & Airflow)
+
+The Challenge: During development, inconsistent task failures occurred due to leaked semaphore errors within the local Docker-hosted Airflow environment. While the DAG itself was resource-efficient, these environmental race conditions threatened pipeline reliability.
+
+The Solution: Implemented a two-fold strategy:
+
+Infrastructure Tuning: Optimized local Docker resource allocation to stabilize the Airflow worker.
+
+Fault Tolerance: Configured a robust retry policy (retries=2) at the DAG level. This ensures high availability and a seamless "first-run" experience for users by gracefully handling transient environmental blips without manual intervention.
+
+2. Data Normalization (Internationalization/UTF-8)
+
+The Challenge: The source dataset contained Brazilian regional data with inconsistent character encoding. City names were recorded as a mix of accented and unaccented strings (e.g., "São Paulo" vs "Sao Paulo"), which would cause critical join failures and skewed metrics in the Gold layer.
+
+The Solution: Engineered a custom Snowflake UDF (User-Defined Function) to normalize strings into a standardized unaccented format during the Silver transformation layer. This eliminated join inconsistencies caused by encoding differences, ensuring accurate regional revenue reporting.
+
+
 
 Setup & Installation
 =====================

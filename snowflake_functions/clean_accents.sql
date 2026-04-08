@@ -3,5 +3,6 @@ CREATE OR REPLACE FUNCTION stage.clean_accents(input_string STRING)
 RETURNS STRING
 AS
 $$
-    TRANSLATE(input_string, 'ÁÀÂÃÉÈÊÍÌÎÓÒÔÕÚÙÛÇ', 'AAAAEEEIIIOOOOUUUC')
+    TRANSLATE(input_string, 'ÁÀÂÃÉÈÊÍÌÎÓÒÔÕÚÙÛÇáàâãéèêíìîóòôõúùûç', 
+                            'AAAAEEEIIIOOOOUUUCaaaaeeeiiioooouuuc')
 $$;
