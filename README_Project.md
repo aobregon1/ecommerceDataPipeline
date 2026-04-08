@@ -48,15 +48,15 @@ Geospatial Density: Regional revenue concentration and logistics performance.
 
 CLV (Customer Lifetime Value): Predictive modeling for long-term revenue impact.
 
-Challenges & Technical Solutions
+Challenges & Solutions
 ===================================
 1. Environmental Resource Constraints (Docker & Airflow)
 
-The Challenge: During development, inconsistent task failures occurred due to leaked semaphore errors within the local Docker-hosted Airflow environment. While the DAG itself was resource-efficient, these environmental race conditions threatened pipeline reliability.
+The Challenge: During development, inconsistent task failures occurred due to leaked semaphore errors within the local Docker-hosted Airflow environment. While the DAG itself was resource-efficient, environmental race conditions threatened pipeline reliability.
 
 The Solution: Implemented a two-fold strategy:
 
-Infrastructure Tuning: Optimized local Docker resource allocation to stabilize the Airflow worker.
+Infrastructure Tuning: Optimized local Docker resource allocation and settings to stabilize the Airflow worker.
 
 Fault Tolerance: Configured a robust retry policy (retries=2) at the DAG level. This ensures high availability and a seamless "first-run" experience for users by gracefully handling transient environmental blips without manual intervention.
 
@@ -78,7 +78,7 @@ Prerequisites
 
     Astro CLI: The interface used to initialize, build, and run the local Airflow stack.
 
-    Snowflake Account: A live instance with ACCOUNTADMIN (or equivalent) privileges to create the initial database and schemas.
+    Snowflake Account: A live instance with ACCOUNTADMIN (or equivalent) privileges to host the database.
 
     Git: To clone the repository and manage version control.
 
@@ -105,7 +105,7 @@ Execute the /include/ingestion/createRawTables.sql script in Snowflake to initia
 
 Initialize Accent Function
 
-Execute the /snowflake_functions/clean_accents.sql script to initialize the clean accents function
+Execute the /snowflake_functions/clean_accents.sql script to install the clean accents function
 
 Launch with Astro CLI:
 
